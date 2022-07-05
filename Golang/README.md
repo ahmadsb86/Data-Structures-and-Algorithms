@@ -1,6 +1,6 @@
 # Usage
 
-To use this library in your Go projects, import the DSAlib module in your source file like so 
+To use this library in your Go projects, import the DSAlib module in your source file.
 
 ```go
 import "https://github.com/ahmadsb86/Data-Structures-and-Algorithms/tree/Dev/Golang"
@@ -12,7 +12,7 @@ import "https://github.com/ahmadsb86/Data-Structures-and-Algorithms/tree/Dev/Gol
 
 Each Data structure has its own struct and methods. Details for each one have been listed here. 
 
-#### Linked Lists
+## Linked Lists
 
 Linked lists allow us to append and delete nodes in O(1) with the trade off of O(N) lookup time complexity. DSAlib implements a doubly linked list in its `LinkedList` struct.
 
