@@ -19,7 +19,7 @@ type LinkedList[T any] struct{
 	tail *LLNode[T]	//For appending LLNodes to the tail
 	idx *LLNode[T]	//Index LLNode for traversing
 	size int
-	Traversed bool
+	hasTraversed bool
 }
 
 
@@ -90,7 +90,7 @@ func (ll *LinkedList[T]) Display(params ...string){	//utility func for displayin
 	if(len(params)!=0){
 		divider = params[0]
 	}
-	for i:=ll.InitTraverse(); !ll.Traversed; i=ll.Traverse(){
+	for i:=ll.InitTraverse(); !ll.hasTraversed; i=ll.Traverse(){
 		fmt.Printf("%v%s", i, divider)
 	}
 }
@@ -99,7 +99,7 @@ func (ll *LinkedList[T]) InitTraverse() T{
 	if(ll.size == 0){
 		panic("Cannot traverse empty linked list")
 	}
-	ll.Traversed = false
+	ll.hasTraversed = false
 	ll.idx = ll.head
 	return ll.idx.val
 }
@@ -110,27 +110,27 @@ func (ll *LinkedList[T]) Traverse() T{
 		ll.idx = ll.idx.nxt
 		x = ll.idx.val
 	}else{
-		ll.Traversed = true
+		ll.hasTraversed = true
 	}
 	return x 
 }
 
-func (ll *LinkedList[T]) InitReverseTraverse() T{
+func (ll *LinkedList[T]) InitReversedTraverse() T{
 	if(ll.size == 0){
 		panic("Cannot traverse empty linked list")
 	}
-	ll.Traversed = false
+	ll.hasTraversed = false
 	ll.idx = ll.tail
 	return ll.idx.val
 }
 
-func (ll *LinkedList[T]) ReverseTraverse() T{
+func (ll *LinkedList[T]) ReversedTraverse() T{
 	var x T
 	if(ll.idx.prv!=nil){
 		ll.idx = ll.idx.prv
 		x = ll.idx.val
 	}else{
-		ll.Traversed = true
+		ll.hasTraversed = true
 	}
 	return x 
 }
