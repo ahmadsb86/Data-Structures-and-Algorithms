@@ -1,5 +1,4 @@
-package main
-
+package DSAlib
 import (
 	"fmt"
 )
@@ -238,14 +237,3 @@ func (pq *PriorityQueue[T]) Push(elm T, priority int){
 
 // func InitTraverse(pq *PriorityQueue[]) 
 
-
-// =========================================================
-// ======================== Test ===========================
-// =========================================================
-
-
-func main(){
-	pq := PriorityQueue[string]{}
-	pq.Push("Hello", 1)
-	pq.Push("World", 2)
-}
